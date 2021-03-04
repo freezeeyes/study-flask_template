@@ -25,7 +25,11 @@ $ python3
 ## 起動方法
 
 ```
-$ python3 app.py
+$ export FLASK_APP=project
+```
+
+```
+$ python3 -m flask run
 ```
 
 
