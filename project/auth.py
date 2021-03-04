@@ -68,7 +68,7 @@ def login_post():
     # セッションにアカウントの認証情報を保存する
     login_user(user, remember=remember)
     # マイページに遷移する
-    return redirect(url_for('profile'))
+    return redirect(url_for('main.profile'))
 
 
 # ログアウト処理
@@ -78,4 +78,4 @@ def logout():
     # セッションからアカウントの認証情報を削除する
     logout_user()
     # マイページに遷移する
-    return redirect(url_for('index'))
+    return redirect(url_for('main.index'))

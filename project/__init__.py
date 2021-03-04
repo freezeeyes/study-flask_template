@@ -1,6 +1,6 @@
-from flask import Flask, render_template, redirect, url_for, flash, request
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, login_required, current_user
+from flask_login import LoginManager
 
 
 # 初期設定
@@ -31,20 +31,12 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-# 非認証ルート
+# 非認証ルートの読み込み
 # **********************************************************************
 
-# トップページ
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-
-# マイページ
-@app.route('/profile')
-@login_required
-def profile():
-    return render_template('profile.html', name=current_user.name)
+# メイン機能のルートをプロジェクトに登録する
+from .main import main as main_blueprint
+app.register_blueprint(main_blueprint)
 
 
 # 認証ルートの読み込み
