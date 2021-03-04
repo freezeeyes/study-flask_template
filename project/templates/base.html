@@ -23,7 +23,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('index') }}">Home</a>
                 </li>
-                
+
                 {% if current_user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
@@ -32,16 +32,16 @@
                 
                 {% if not current_user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                    <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('signup') }}">Signup</a>
+                    <a class="nav-link" href="{{ url_for('auth.signup') }}">Signup</a>
                 </li>
                 {% endif %}
                 
                 {% if current_user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
                 </li>
                 {% endif %}
             </ul>
