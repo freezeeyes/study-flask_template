@@ -58,11 +58,28 @@ $ python3
 
 ## 起動方法
 
-```
-$ export FLASK_APP=project
-```
+### Windows10
+
+PowerShellの場合
 
 ```
+$ $env:FLASK_APP="project"
+$ $env:FLASK_DEBUG=1
+```
+
+
+CMDの場合
+
+```
+$ set FLASK_APP=project
+$ set FLASK_DEBUG=1
+```
+
+### Linux
+
+```
+$ export FLASK_APP=project
+$ export FLASK_DEBUG=1
 $ python3 -m flask run
 ```
 
